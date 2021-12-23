@@ -28,6 +28,7 @@ body{
     background-color:burlywood;
     border-radius: 5px;
     box-shadow: 0 2px 10px #777;
+    width: 400px;
 }
 
 h2{
@@ -55,8 +56,8 @@ h2{
 
 .content input {
     border-radius: 5px;
-    border: 2.5px solid rgb(206, 201, 201);
-    /* display: block; */
+    border: 3px solid rgb(206, 201, 201);
+    display: block;
     width: 100%;
     padding: 6px;
     font-size: 14px;
@@ -79,8 +80,11 @@ h2{
      color: var(--error);
      visibility: hidden;
      position: block;
+     margin-top: 5px;
+     margin-left: 20px;
      bottom: 0;
      left: 0;
+     display: block;
 
  }
 
@@ -96,7 +100,7 @@ h2{
      border-radius: 5px;
      border: 2px solid rgb(112, 69, 12) ;
      font-size: 16px;
-     
+     display: block;
  }
 
  button:hover {
@@ -104,4 +108,8 @@ h2{
      font-size: 18px;
      
  }
+
+/* .content input:hover {
+
+} */
 
