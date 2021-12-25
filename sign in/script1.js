@@ -23,33 +23,38 @@ function validEmail(email){
     return re.test(String(email).toLowerCase());
 };
 
-function checkRequired(inpurArray) {
-
-    inpurArray.forEach(function(input) {
-
-        if(input.value === ''){
-            showError(input,`${getFieldId(input)} is required`);
-        }else{
-            showSuccess(input);
-        }
-    });
-}
-
-function getFieldId(input) {
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-}
-
-
-function checkLength(input, min, max,) {
-    
-}
 
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     // console.log("sufiyan");
 
-    checkRequired([uname,email,password,password1]);
-    checkLength(uname,3,10);
-    checkLength(password,6,30);
+    if (uname.value === ''){
+        showError(uname , "UserName is  Required");
+    }else{
+        showError(uname);
+    }
+
+    if (email.value === ''){
+        showError(email , "Email is Required");
+    }else if(!validEmail(email.value)){
+        showError(email,"Invalid Email");
+
+    }else{
+        showSuccess(email);
+    }
+
+    if (password.value === ''){
+        showError(password , "Password is Required");
+    }else{
+        showSuccess(password);
+    }
+
+
+        if (password1.value === ''){
+            showError(password1 , "confirm Your password");
+        }else{
+            showSuccess(password1);
+
+        }
 })
