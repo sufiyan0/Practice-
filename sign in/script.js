@@ -18,34 +18,58 @@ function showSuccess(input){
 };
 
 
+function checkEmail(input){
+    const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    //return re.test(String(email).toLowerCase());
+    if( re.test(input.value.trim())) {
+        showSuccess(input);
+    }else{
+        showError(input, "Invalid Email");
+    }
+};
+
+function checkRequired(inpurArray) {
+
+    inpurArray.forEach(function(input) {
+
+        if(input.value === ''){
+            showError(input,`${getFieldId(input)} is required`);
+        }else{
+            showSuccess(input);
+        }
+    });
+}
+
+function getFieldId(input) {
+    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
+
+function checkLength(input, min, max,) {
+        if (input.value.length < min) {
+            showError(input, `${getFieldId(input)} needs to be at least ${min} charactor`);
+        }else if (input.value.length > max) {
+            showError(input, `${getFieldId(input)} needs to be less then ${max} charactor`);
+        }else {
+            showSuccess(input);
+        }
+
+};
+
+function confirmPassword(input1,input2) {
+    if ( input1.value !== input2.value) {
+        showError(input2, "Password don't match ")
+    } 
+}
+
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     // console.log("sufiyan");
 
-    if (uname.value === ''){
-        showError(uname , "UserName is  Required");
-    }else{
-        showSuccess(uname);
-    }
-
-    if (email.value === ''){
-        showError(email , "Email is Required");
-    }else{
-        showSuccess(email);
-    }
-
-    if (password.value === ''){
-        showError(password , "Password is Required");
-    }else{
-        showSuccess(password);
-    }
-
-
-        if (password1.value === ''){
-            showError(password1 , "confirm Your password");
-        }else{
-            showSuccess(password1);
-
-        }
+    checkRequired([uname,email,password,password1]);
+    checkLength(uname,3,15);
+    checkLength(password,6,30);
+    checkEmail(email);
+    confirmPassword(password,password1);
 })
