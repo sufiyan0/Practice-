@@ -6,9 +6,27 @@ const movieSelect = document.getElementById('movies');
 let ticketValue = +movieSelect.value;
 
 
+function updateSelectedCount() {
+    const selectedSeats = document.querySelectorAll('.row .seats.selected');
+    const selectedSeatsCount = selectedSeats.length;
+    count.innerText = selectedSeatsCount;
+    price.innerText = selectedSeatsCount  * ticketValue;
+};
+
 
 container.addEventListener('click', e => {
-    console.log(e.target);
+   if(e.target.classList.contains('seats')  &&
+    !e.target.classList.contains('occupied')
+   ) {
+        e.target.classList.toggle('selected') 
+        updateSelectedCount(); 
+   }
+    
 
 });
+
+movieSelect.addEventListener('change' , e => {
+    ticketValue = +e.target.value;
+    updateSelectedCount();
+})
 
