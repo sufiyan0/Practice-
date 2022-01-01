@@ -21,18 +21,22 @@ h1{
 p{
     text-align: center;
 }
+
 .btn{
     display:block;
     color: white;
     background-color: green ;
     border-radius: 5px;
-    padding: 2px 10px;
-    
+    padding: 5px 15px;
     font-size: 12px;
     font-weight: bold;
     cursor: pointer;
-
 }
+
+/* .btn:hover {
+    padding: 7px 17px;
+    box-shadow: 2px 3px 5px gray;
+} */
 .currency{
     padding: 40px 0;
     align-items: center;
@@ -67,6 +71,7 @@ p{
     font-family: 16px;
     color: green;
     padding: 20px 0;
+    display: none;
 }
 
 select:focus, input:focus, button:focus {
