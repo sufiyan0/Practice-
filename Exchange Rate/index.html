@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Exchange Rate Calculator</title>
 </head>
 <body>
@@ -175,8 +176,14 @@
                 <option value='YER'>Yemen---Yemeni Rial</option>
                 <option value='ZMW'>Zambia---Zambian Kwacha</option>
             </select>
-                <input type="number" id="ammount-one" placeholder="0">
+            <input type="number" id="ammount-one" placeholder="0">
         </div>
+
+        <div class="swap-rate">
+            <button class="btn" id="swap">Swap</button>
+            <div class="rate" id="rate"></div>
+        </div>
+
         <div class="currency">
             <select name="" id="currency-two" class="currency-one">
                 <option value='AFN'>Afghanistan---Afghan Afghani</option>
@@ -343,6 +350,8 @@
             </select>
                 <input type="number" id="ammount-two" placeholder="0">
         </div>
+
+       
     <div>
 
 </body>
