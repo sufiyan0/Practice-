@@ -27,7 +27,11 @@ p{
     color: white;
     background-color: green ;
     border-radius: 5px;
+<<<<<<< Updated upstream
     padding: 5px 15px;
+=======
+    padding: 2px 10px;
+>>>>>>> Stashed changes
     font-size: 12px;
     font-weight: bold;
     cursor: pointer;
