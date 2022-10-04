@@ -9,11 +9,11 @@
 :root{
     --success:green;
     --error:orangered;
-
+ 
 }
 
 body{
-    background-color: rgb(224, 221, 217);
+    background-color: rgb(62, 61, 61);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,7 +92,7 @@ h2{
      visibility: visible;
  }
 
- button{
+button{
      padding: 10px;
      width: 100%;
      background-color: rgb(228, 228, 228);
@@ -101,7 +101,7 @@ h2{
      border: 2px solid rgb(161, 161, 161) ;
      font-size: 16px;
      display: block;
- }
+}
 
  button:hover {
      transform: scale(1.05);
