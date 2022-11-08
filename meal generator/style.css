@@ -119,6 +119,46 @@ form button{
     outline: 0;
 }
 
+.selected-meals{
+    margin: 30px auto;
+    width: 60%;
+}
+.selected-meal-info img{
+    width: 300px;
+    border: 2px solid white;
+    border-radius: 10px;
+
+}
+.hed{
+    border: 2px dotted white;
+    border-radius: 10px;
+    margin-top: 10px;
+    /* width: 50%; */
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ingredients-details li{
+    /* font-style: ; */
+    list-style-type: none;
+    border-radius: 5px;
+
+
+    border: 1px solid white;
+}
+.Yuthed{
+    border: 1px dotted white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+}
+
+
+
 @media (max-width: 500px){
     input[type = 'text']{
         width: 100%;

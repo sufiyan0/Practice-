@@ -47,13 +47,54 @@ function searchMeal(e){
         // condition if user input only spaces and invald search 
         alert('Plese enter a valid keyword for batter output')
     }
-
+    selectedMeal.innerHTML = '';
 }
 
 // function to display specific meal details and update dom
 function displayMealData(mealData){
+    // console.log(mealData.strIngredient1)
+    const ingredients = [];
+    for(let i = 1;i<=20;i++){
+        if(mealData[`strIngredient${i}`]){
+           
+            ingredients.push(`${mealData[`strIngredient${i}`]}   :   ${mealData[`strMeasure${i}`]} `)
+        }else{
+            break;
+        }
+    }
+        // Updating DOM to display the meal recipy and ingredients
+        selectedMeal.innerHTML = `
+        <div class='selected-meal-info'>
+            <h1>${mealData.strMeal}</h1>
+            <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
+            <div class="hed" >
+                <h2>Category :  ${mealData.strCategory}</h2>
+                <h3>Dish :  ${mealData.strArea}</h3>
+            </div>
+            <h2>Instructions</h2>
+            <p>${mealData.strInstructions}</p>
+            <h2> Ingredients</h2>
+            <ul class='ingredients-details'>
+                ${ingredients.map(item => `
+                    <li>${item}</li>
+                `).join()
+            }
 
-    // Updating DOM to display the meal recipy and ingredients
+            </ul>
+            <div class="Yuthed">
+                <h4>Youtube link</h4>
+                <h5>${mealData.strYoutube}</h5>
+            </div>
+        </div>
+        `
+        reasultHeading.innerHTML = '';
+        meals.innerHTML = '';
+
+        
+     
+    // console.log(ingredients)
+
+    
 
 };
 // Function to find meal details by fetching API of meal details
@@ -94,13 +135,3 @@ meals.addEventListener('click' , e => {
         mealDetails(mealIds);
     }
 })
-
-
-// selectedMeal.innerHTML = `
-// <div class='selected-meal-info'>
-//     <h1>${mealData.strMeal}</h1>
-//     <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
-
-
-// </div>
-// `
